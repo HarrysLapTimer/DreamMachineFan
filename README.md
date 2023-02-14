@@ -93,7 +93,7 @@ temperature is 45.0°C, keeping fan at 118
 ...
 ```
 
-![Temperature development](./figure_1.png?raw=true "Temperature development")
+![Temperature development](./Figure_1.png?raw=true "Temperature development")
 
 I suggest to monitor what is happening for an hour. Once you see it is fine in your environment and converges towards the set point temperature, you can make the script a permanent background process.
 
