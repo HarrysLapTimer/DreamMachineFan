@@ -21,7 +21,7 @@ Martin Lundberg https://github.com/m-lundberg/simple-pid - thanks a lot!
 
 # Installation
 - Enable ssh for your Dream Machine and log in as root.
-- To allow a full restore, memorize your Dream Machine's default fan value by entering `cat /sys/class/hwmon/hwmon0/device/pwm2` on the command line; memorize the number shown
+- To allow a full restore, memorize your Dream Machine's default fan value by entering `cat /sys/class/hwmon/hwmon0/device/pwm2` on the command line; memorize the number shown (I will refer to this number as DEFAULTSPEEDMEMORIZED)
 - Check if python3 is preinstalled by entering `python3`
 - In case it isn't, install it using `apt-get install python3`
 - Install Python dist utilities using `apt-get install python3-distutils`
@@ -97,8 +97,8 @@ I suggest to montitor what is happening for an hour. Once you see it is fine in 
 
 [TODO] descibe how to run the script on reboot using cron, pipe output to a log file and rotate that log so it doesn't use up a lot of space
 
-# Uninstalling / return to factory settings
+# Uninstalling / Return to Factory Settings
 That's easy:
-- return to the default fan speed by entering `echo DEFAULTSPEEDMEMORIZED > /sys/class/hwmon/hwmon0/device/pwm2` (see #Installation)
+- return to the default fan speed by entering `echo DEFAULTSPEEDMEMORIZED > /sys/class/hwmon/hwmon0/device/pwm2` (see Installation section)
 - stop the process and delete `dream_machine_fan.py`
 
