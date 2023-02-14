@@ -94,5 +94,6 @@ temperature is 45.0°C, keeping fan at 118
 
 I suggest to montitor what is happening for an hour. Once you see it is fine in your environment and converges towards the set point temperature, you can make the script a permanent background process.
 
+[TODO] descibe how to run the script on reboot using cron, pipe output to a log file and rotate that log so it doesn't use up a lot of space
 
 
