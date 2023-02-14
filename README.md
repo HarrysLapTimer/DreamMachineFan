@@ -73,6 +73,23 @@ temperature is 45.8°C, setting fan to 94
 temperature is 46.0°C, keeping fan at 94
 temperature is 45.8°C, setting fan to 95
 ...
+temperature is 45.2°C, keeping fan at 118
+temperature is 45.0°C, setting fan to 119
+temperature is 45.0°C, setting fan to 118
+temperature is 45.2°C, keeping fan at 118
+temperature is 45.0°C, setting fan to 119
+temperature is 45.0°C, setting fan to 118
+temperature is 45.0°C, keeping fan at 118
+temperature is 45.0°C, keeping fan at 118
+temperature is 45.0°C, keeping fan at 118
+temperature is 45.0°C, keeping fan at 118
+temperature is 45.0°C, keeping fan at 118
+temperature is 45.0°C, keeping fan at 118
+temperature is 45.0°C, keeping fan at 118
+temperature is 45.0°C, keeping fan at 118
+temperature is 45.0°C, keeping fan at 118
+temperature is 45.0°C, keeping fan at 118
+...
 ```
 
 I suggest to montitor what is happening for an hour. Once you see it is fine in your environment and converges towards the set point temperature, you can make the script a permanent background process.
