@@ -97,7 +97,40 @@ temperature is 45.0°C, keeping fan at 118
 
 I suggest to monitor what is happening for an hour. Once you see it is fine in your environment and converges towards the set point temperature, you can make the script a permanent background process.
 
-[TODO] descibe how to run the script on reboot using cron, pipe output to a log file and rotate that log so it doesn't use up a lot of space
+To run the script permanenty, kill the test process and start a new one in background:
+```
+> python3 /root/dream_machine_fan.py >> /root/dream_machine_fan.log 2>&1 &
+> disown
+```
+
+This will make the script run in background independent from our ssh session.
+
+Next, we prepare the system to be restarted automatically when the Dream Machine is rebooted:
+```
+> crontab -e
+```
+Now, enter
+```
+@reboot python3 /root/dream_machine_fan.py >> /root/dream_machine_fan.log 2>&1 &
+```
+as a separate line, save and leave the editor.
+
+The above commands will write to a log file all day. To limit storage space used, we use `logrotate` to create a daily backup 
+for the last 7 days but purge everything beyond that:
+```
+> vim /etc/logrotate.d/dream_machine_fan 
+```
+Add the text
+```
+/root/dream_machine_fan.log {
+  rotate 7
+  daily
+  compress
+  missingok
+  notifempty
+}
+```
+and save / leave the editor.
 
 # Uninstalling / Return to Factory Settings
 That's easy:
