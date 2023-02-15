@@ -136,6 +136,5 @@ and save / leave the editor.
 That's straight forward:
 - return to the default fan speed by entering `echo DEFAULTSPEEDMEMORIZED > /sys/class/hwmon/hwmon0/device/pwm2` (see Installation section)
 - stop the process and delete `dream_machine_fan.py`
-- remove the `crontab` entry by entering `crontab -e` again
-- remove /etc/logrotate.d/dream_machine_fan
-
+- remove the `crontab` line added by after entering `crontab -e` again
+- remove `/etc/logrotate.d/dream_machine_fan`
