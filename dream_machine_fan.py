@@ -39,11 +39,11 @@ class DreamMachineSE(object):
             pwm2 = int(pwm2)
             if pwm2 != self.pwm2:
                 self.pwm2 = pwm2
-                print(u"temperature is {:.1f}°C, setting fan to {:.0f}".format(temperature, pwm2))
+                print(u"{:s}\ttemperature is {:.1f}°C, setting fan to {:.0f}".format(time.ctime(), temperature, pwm2))
                 with open(pwm2_file, 'w') as writer:
                     writer.write(str(pwm2))
             else:
-                print(u"temperature is {:.1f}°C, keeping fan at {:.0f}".format(temperature, pwm2))
+                print(u"{:s}\ttemperature is {:.1f}°C, keeping fan at {:.0f}".format(time.ctime(), temperature, pwm2))
 
         return temperature
 
